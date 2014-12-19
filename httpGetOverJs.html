@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<script type="text/javascript">
+				function httpGet(url) {
+					var getRequest = null;
+
+					getRequest= new XMLHttpRequest();
+					getRequest.open( "GET", url, false );
+					getRequest.setRequestHeader("Accept","text/html");
+					//getRequest.setRequestHeader("User-Agent", "pierre");
+
+					getRequest.send(null);
+					var responseText = getRequest.responseText;
+					document.write(responseText);
+				}			
+			</script>
+	</head>
+	<body>
+		<p>
+		Hints:
+		<ul>
+			<li><a href="http://stackoverflow.com/questions/1268673/set-a-request-header-in-javascript">User-Agent Header is prevented</a>
+			<li>you can only GET a resource from the domain the current page comes from</li> 
+			<li>you can put the only GET a resource from the domain the current page comes from</li> 
+		</ul>
+		<p>
+		<button type="button" id="getRequestAsButton" onclick="httpGet('index.html')">trigger GET-Request</button>
+	</body>
+</html>
